@@ -1,3 +1,9 @@
+# Myspace
+
+用react重构了一个Vue项目，体会了Vue和react的不同，从路由、redux和state方面的区别  
+有登录注册功能，还有好友列表，发表动态的功能，简易版的qq空间。  
+后端部分用的使y总的api
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
