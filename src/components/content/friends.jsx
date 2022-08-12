@@ -2,11 +2,13 @@ import React, { Component, useState } from 'react';
 import Base from './base';
 import $ from 'jquery'
 import { useNavigate } from 'react-router';
+import { useSelector } from 'react-redux';
 
 const Friends = () => {
 
   const [users, setusers] = useState([]);
   const [done, setdone] = useState(false)
+  const is_login = useSelector(state => state.user.is_login);
   const navigate = useNavigate();
 
   const getuserlist = () => {
@@ -23,7 +25,11 @@ const Friends = () => {
   }
 
   const getuserinfo = (user_id) => {
-    navigate(`/myspace/userdynamics/${user_id}`);
+    if (is_login) {
+      navigate(`/myspace/userdynamics/${user_id}`);
+    } else {
+      navigate('/myspace/login')
+    }
   }
 
   getuserlist();
